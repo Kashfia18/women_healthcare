@@ -1,0 +1,9 @@
+##Total number of women in each age and income group.
+SELECT b.age0,a.income0, COUNT(*)
+FROM kf092010.women_health_num a
+JOIN kf092010.women_health_num_3 b
+ON a.swanid = b.swanid
+WHERE a.income0 IN ('1', '2', '3', '4')
+GROUP BY 1,2
+ORDER BY 1,2;
+
