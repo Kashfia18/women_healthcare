@@ -1,0 +1,56 @@
+## The number of doctor's visit is far less for the non-insured women vs the insured women
+SELECT MDTALK0, COUNT(*)
+FROM kf092010.women_health_num
+WHERE noinsur0=1
+GROUP BY 1
+ORDER BY 1;
+
+SELECT MDTALK0, COUNT(*)
+FROM kf092010.women_health_num
+WHERE noinsur0=2
+GROUP BY 1
+ORDER BY 2 DESC;
+
+## Among Noninsurance holders 10% had accomplished less in work due to health
+SELECT phyacco0, COUNT(*)
+FROM kf092010.women_health_num
+WHERE noinsur0=2
+GROUP BY 1
+ORDER BY 2 DESC;
+
+##Non insurance holders are not more depressed than the insurance holders.
+SELECT noinsur0, COUNT(*)
+FROM kf092010.women_health_num
+WHERE nonecar0=2
+GROUP BY 1
+ORDER BY 2 DESC;
+
+##A major portion of non insurers are from low income group
+SELECT income0, COUNT(*)
+FROM kf092010.women_health_num
+WHERE noinsur0=2
+GROUP BY 1
+ORDER BY 1;
+
+##84% anemia patients go to doctors
+SELECT a.mdtalk0, COUNT(*)
+FROM kf092010.women_health_num_2 b
+JOIN kf092010.women_health_num a
+ON a.swanid = b.swanid
+WHERE b.anemia0 = 2
+GROUP BY 1
+ORDER BY 1
+
+##This group of patients are generally healthy. Checked in terms of aids, anemia, tuberculosis
+SELECT b.aids0, COUNT(*)
+FROM kf092010.women_health_num_2 b
+GROUP BY 1
+ORDER BY 1
+
+Most women in this dataset don't experience depression
+SELECT b.DEPRESS0, a.noinsur0, COUNT(*)
+FROM kf092010.women_health_num_2 b
+JOIN kf092010.women_health_num a
+ON a.swanid = b.swanid
+WHERE depress0 IN ('3', '4') AND noinsur0 = 2
+GROUP BY 1,2
