@@ -9,7 +9,7 @@ SELECT MDTALK0, COUNT(*)
 FROM kf092010.women_health_num
 WHERE noinsur0=2
 GROUP BY 1
-ORDER BY 2 DESC;
+ORDER BY 1;
 
 ## Among Noninsurance holders 10% had accomplished less in work due to health
 SELECT phyacco0, COUNT(*)
