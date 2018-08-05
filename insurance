@@ -1,0 +1,6 @@
+##Does insurance have an affect on going to the doctor
+SELECT income0, COUNT(*)
+FROM kf092010.women_health_num
+WHERE noinsur0 = 2 AND mdtalk0 != 0
+GROUP BY 1
+ORDER BY 1;
