@@ -1,0 +1,42 @@
+## Women who had osteoarthritis grouped by age
+SELECT age0,osteoar0, COUNT(*)
+FROM kf092010.women_health_num_3
+WHERE osteoar0 IN ('1','2')
+GROUP BY 1,2
+ORDER BY 1,2;
+
+## Women who had breast pain grouped by age
+SELECT age0,breastp0, COUNT(*)
+FROM kf092010.women_health_num_3
+WHERE breastp0 IN ('1','2')
+GROUP BY 1,2
+ORDER BY 1,2;
+
+##Women who had cramps grouped by age
+SELECT age0,cramps0, COUNT(*)
+FROM kf092010.women_health_num_3
+WHERE cramps0 IN ('1','2')
+GROUP BY 1,2
+ORDER BY 1,2;
+
+##Women who had bloating grouped by age
+SELECT age0,bloated0, COUNT(*)
+FROM kf092010.women_health_num_3
+WHERE bloated0 IN ('1','2')
+GROUP BY 1,2
+ORDER BY 1,2;
+
+##Women who had mood change grouped by age
+SELECT age0,moodchn0, COUNT(*)
+FROM kf092010.women_health_num_3
+WHERE moodchn0 IN ('1','2')
+GROUP BY 1,2
+ORDER BY 1,2;
+
+## Women who had anxiousness grouped by age
+SELECT age0,anxious0, COUNT(*)
+FROM kf092010.women_health_num_3
+WHERE anxious0 IN ('1','2')
+GROUP BY 1,2
+ORDER BY 1,2;
+
